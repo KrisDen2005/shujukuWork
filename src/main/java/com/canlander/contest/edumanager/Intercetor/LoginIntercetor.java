@@ -1,5 +1,7 @@
 package com.canlander.contest.edumanager.Intercetor;
 
+import com.canlander.contest.edumanager.Utils.JwtUtils;
+import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
@@ -8,9 +10,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Component
 public class LoginIntercetor implements HandlerInterceptor {
+    private JwtUtils jwtUtils = new JwtUtils();
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        String token = request.getHeader("token");
+        if (token == null || token.equals("")) {
+            return false;
+        }
+        Claims parse = jwtUtils.parse(token);
+        //解析的是错误的 ， 或者解析的是空白的
+        if (parse == null) {
+            return false;
+        }
         return true;
 
     }
