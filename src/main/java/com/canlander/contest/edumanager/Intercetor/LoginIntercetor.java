@@ -1,6 +1,7 @@
 package com.canlander.contest.edumanager.Intercetor;
 
 import com.canlander.contest.edumanager.Utils.JwtUtils;
+import com.canlander.contest.edumanager.Utils.ThreadlocalUtils;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Component
 public class LoginIntercetor implements HandlerInterceptor {
     private JwtUtils jwtUtils = new JwtUtils();
+    private ThreadlocalUtils threadlocalUtils = new ThreadlocalUtils();
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -23,6 +25,8 @@ public class LoginIntercetor implements HandlerInterceptor {
         if (parse == null) {
             return false;
         }
+
+        threadlocalUtils.setThreadLocal();
         return true;
 
     }

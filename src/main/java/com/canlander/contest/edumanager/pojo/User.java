@@ -13,7 +13,6 @@ public class User  implements Serializable {
     private Role role  ;
     private   int   refId ;
     private LocalDateTime   createTime ;
-
     public User() {
     }
 
@@ -25,8 +24,6 @@ public class User  implements Serializable {
         this.refId = refId;
         this.createTime = createTime;
     }
-
-
     /**
      * 获取
      * @return userId

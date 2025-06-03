@@ -11,8 +11,10 @@ public class UserService {
     private UserMapper userMapper;
 
     public boolean login(User user) {
-        String string = userMapper.selectUser(user);
-        if (string == null || string.equals("")) {
+        System.out.println(user);
+        User mapperUser = userMapper.selectUser(user);
+        System.out.println("查询到的数据库的user的信息是" + mapperUser);
+        if (mapperUser == null) {
             return false;
         }
         return true;

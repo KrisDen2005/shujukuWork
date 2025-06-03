@@ -18,7 +18,7 @@ class EduManagerApplicationTests {
     @Test
     void contextLoads() {
         JwtUtils jwtUtils = new JwtUtils();
-        User user = new User(1, "dengjiehui", "123456", Role.STUDENT, 1, LocalDateTime.now());
+        User user = new User(1, "dengjiehui", "123456", Role.学生, 1, LocalDateTime.now());
         String jwt = jwtUtils.jwt(user);
         token = jwt;
     }

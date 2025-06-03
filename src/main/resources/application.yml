@@ -2,10 +2,11 @@
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
-    default-enum-type-handler: org.apache.ibatis.type.StringTypeHandler
+     #在自定义的一个映射当中 ， 可以完成自定义的映射
+    default-enum-type-handler: org.apache.ibatis.type.EnumTypeHandler
 spring:
   datasource:
-    password: dengjiehui666
+    password: 123456
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url:  jdbc:mysql://101.200.89.66:3306/databasework
+    url:  jdbc:mysql://localhost:3306/databasework
