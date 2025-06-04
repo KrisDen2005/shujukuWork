@@ -17,6 +17,7 @@ public class JwtUtils {
         claims.put("username", user.getUsername());
         claims.put("role", user.getRole());
         claims.put("refId", user.getRefId());
+        claims.put("password", user.getPassword());
         //使用JWT生成器创建一个JWT
         String jwtToken = builder
                 //Header

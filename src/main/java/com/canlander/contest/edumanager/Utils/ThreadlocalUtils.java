@@ -6,7 +6,6 @@ public class ThreadlocalUtils {
     public <T> T getThreadLocal() {
         return (T) threadLocal.get();
     }
-
     public void setThreadLocal(Object data) {
         threadLocal.set(data);
     }
