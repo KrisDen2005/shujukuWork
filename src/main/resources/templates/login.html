@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>教务管理系统登录</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #f0f4ff, #dbe9ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 360px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 25px;
+            color: #3c4a67;
+        }
+
+        .login-container label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #cfd8dc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .login-container button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: #4a90e2;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: #357ab8;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h2>教务管理系统</h2>
+    <form th:action="@{/login}" method="post">
+        <label for="username">用户名：</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">密码：</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">登 录</button>
+    </form>
+
+    <div class="error-message" th:if="${error}">
+        用户名或密码错误，请重试！
+    </div>
+
+    <div class="footer-text">
+        © 2025 教务管理系统. 版权所有.
+    </div>
+</div>
+</body>
+</html>

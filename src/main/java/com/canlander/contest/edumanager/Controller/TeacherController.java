@@ -3,6 +3,7 @@ package com.canlander.contest.edumanager.Controller;
 import com.canlander.contest.edumanager.common.Result;
 import com.canlander.contest.edumanager.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,10 +12,16 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
+
+    @GetMapping("course")
+    public String toSearchCourse() {
+        return "teacherCourseIndex";
+    }
+
     /*教师授课课程记录*/
     @PostMapping("course")
     public Result searchCourse() {
-       // teacherService.searchTeacherPlan();
+        // teacherService.searchTeacherPlan();
         return null;
     }
 }
