@@ -14,8 +14,8 @@ public class TeacherService {
     private TeacherMapper teacherMapper;
 
     /*查询教师授课的计划*/
-    public List<TeacherPlan> searchTeacherPlan(Teacher teacher) {
-        List<TeacherPlan> teacherPlans = teacherMapper.selectTeacherPlan(teacher);
+    public List<TeacherPlan> searchTeacherPlan(int  teacherId) {
+        List<TeacherPlan> teacherPlans = teacherMapper.selectTeacherPlan(teacherId);
         return teacherPlans;
     }
 }

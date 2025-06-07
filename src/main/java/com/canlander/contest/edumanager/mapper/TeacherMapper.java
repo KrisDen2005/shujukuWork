@@ -11,6 +11,6 @@ import java.util.List;
 public interface TeacherMapper {
     //查询课表
     @Select("select  * from  TeachingPlan_rg3_8 where teacher_id =  #{teahcerId}")
-    public List<TeacherPlan> selectTeacherPlan(Teacher teacher);
+    public List<TeacherPlan> selectTeacherPlan(int  teacherId);
 
 }

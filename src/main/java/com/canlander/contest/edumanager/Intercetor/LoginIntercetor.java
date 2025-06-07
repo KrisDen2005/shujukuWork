@@ -59,7 +59,6 @@ public class LoginIntercetor implements HandlerInterceptor {
         System.out.println(user);
         return true;
     }
-    // threadlocalUtils.setThreadLocal();
 
 
     @Override
