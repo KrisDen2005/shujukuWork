@@ -14,6 +14,15 @@ public class Result {
         this.data = data;
     }
 
+    //快速返回操作成功响应结果
+    public static Result success() {
+        return new Result(1, "操作成功", null);
+    }
+
+    public static Result error(String message) {
+        return new Result(0, message, null);
+    }
+
     /**
      * 获取
      * @return code
