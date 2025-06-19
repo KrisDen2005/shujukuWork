@@ -18,6 +18,7 @@ public class StudentController {
 
     /**
      * 入学登记
+     *
      * @param student
      * @return
      */
@@ -62,13 +63,9 @@ public class StudentController {
      * @return
      */
     @GetMapping("/{studentId}/courses")
-    public ResponseEntity<List<StudentCourseGradeDto>> getStudentCoursesWithGrades(
-            @PathVariable Integer studentId) {
-
+    public ResponseEntity<List<StudentCourseGradeDto>> getStudentCoursesWithGrades(@PathVariable Integer studentId) {
         List<StudentCourseGradeDto> courses = studentService.getStudentCoursesWithGrades(studentId);
         return ResponseEntity.ok(courses);
     }
-
-
 
 }

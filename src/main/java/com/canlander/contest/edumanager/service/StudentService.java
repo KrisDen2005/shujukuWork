@@ -16,9 +16,9 @@ public class StudentService {
 
     public boolean enrollment(Student student) {
         Student byStudentName = studentMapper.findByStudentName(student.getName());
-        if(byStudentName == null) {
-           int i  =   studentMapper.enrollment(student);
-            if(i > 0) {
+        if (byStudentName == null) {
+            int i = studentMapper.enrollment(student);
+            if (i > 0) {
                 return true;
             }
         }
@@ -28,7 +28,7 @@ public class StudentService {
 
     public boolean transferStudentMajor(int studentId, int major) {
         int i = studentMapper.transferStudentMajor(studentId, major);
-        if(i > 0) {
+        if (i > 0) {
             return true;
         }
         return false;
@@ -36,7 +36,7 @@ public class StudentService {
 
     public boolean updateStudentStatus(int studentId, String status) {
         int i = studentMapper.updateStudentStatus(studentId, status);
-        if(i > 0) {
+        if (i > 0) {
             return true;
         }
         return false;
@@ -45,5 +45,4 @@ public class StudentService {
     public List<StudentCourseGradeDto> getStudentCoursesWithGrades(Integer studentId) {
         return studentMapper.selectStudentCoursesWithGrades(studentId);
     }
-
 }
